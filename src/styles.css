@@ -1,0 +1,98 @@
+body {
+    background-color: #030f2e;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .btn-primary {
+    background-color: #1e4ed8;
+    border-color: #1e4ed8;
+  }
+  
+  .btn-primary:hover {
+    background-color: #3db5ff;
+    border-color: #3db5ff;
+    color: #000;
+  }
+  
+  .btn-warning {
+    background-color: #3db5ff;
+    color: #000;
+    border: none;
+  }
+  
+  .btn-warning:hover {
+    background-color: #ffffff;
+    color: #1e4ed8;
+  }
+  
+  .form-control {
+    background-color: #1a1a1a;
+    color: #fff;
+    border: 1px solid #3db5ff;
+  }
+  
+  .navbar {
+    background-color: #0e0e41;
+  }
+  
+  .nav-link {
+    color: #3db5ff !important;
+  }
+  
+  .nav-link:hover {
+    color: #ffffff !important;
+  }
+  .centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: start; 
+    height: calc(100vh - 300px);
+    margin-top: 60px; 
+  }
+  
+  .auth-box {
+    background-color: #0e0e41;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #0e3bce;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .auth-box img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1rem;
+  }
+
+  a.router-link {
+    color: #3db5ff;
+    text-decoration: none;
+  }
+  
+  a.router-link:hover {
+    color: white;
+    text-decoration: underline;
+  }
+
+  .form-control:focus {
+    background-color: #1a1a1a !important;
+    color: #ffffff;
+    border-color: #3db5ff;
+    box-shadow: 0 0 0 0.2rem rgba(61, 181, 255, 0.25);
+  }
+
+  .btn-outline-primary {
+    border-color: #1e4ed8;
+    color: #3db5ff;
+  }
+  
+  .btn-outline-primary:hover {
+    background-color: #3db5ff;
+    color: #000;
+  }
+
+  
+  

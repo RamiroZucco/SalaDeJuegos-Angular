@@ -1,0 +1,25 @@
+<div class="centered-container">
+  <div class="d-flex flex-wrap justify-content-center gap-4">
+    <!-- Contenedor scrollable -->
+    <div class="auth-box p-4 overflow-auto" style="max-height: 450px;">
+      <h4>{{ githubUser?.name }}</h4>
+      <p><strong></strong> {{ githubUser?.bio }}</p>
+      <p><strong>Usuario de Github:</strong> {{ githubUser?.login }}</p>
+      <p><strong>Ubicación:</strong> {{ githubUser?.location }}</p>
+      <hr>
+      <h5>Acerca del juego del creador:</h5>
+        <p class="lead text-light">
+          Llamado <strong>"COLOR DETECTOR"</strong>, un desafío visual en el que el jugador debe identificar 
+          el cuadrado que tiene un color ligeramente diferente al resto, entre una cuadrícula de colores similares. <br><br>
+          A medida que el jugador acierta, el nivel de dificultad aumenta, reduciendo la diferencia tonal.<br><br>
+          El objetivo es desafiar la percepción visual y poner a prueba la rapidez y precisión para detectar colores,
+          en una carrera contra el tiempo o en modo por niveles. Ideal para divertirse y poner a prueba tu vista.
+        </p>
+    </div>
+
+    <div class="d-flex align-items-center">
+      <img [src]="githubUser.avatar_url" alt="Avatar" width="450">
+    </div>
+  </div>
+</div>
+

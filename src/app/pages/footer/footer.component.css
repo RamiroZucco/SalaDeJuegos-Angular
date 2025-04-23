@@ -1,0 +1,12 @@
+footer {
+    color: #3db5ff;
+  }
+  
+  footer p {
+    color: #3db5ff !important;
+  }
+  
+  footer hr.featurette-divider {
+    border-top: 1px solid #3db5ff;
+    opacity: 1;
+  }
