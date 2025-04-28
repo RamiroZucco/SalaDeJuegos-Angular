@@ -51,5 +51,9 @@ export class AuthService {
     const { error} = await this.sb.supabase.auth.signOut();
   }
 
+  async insertarUsuario(profile: { id_usuario: string; email: string; nombre: string; apellido: string; edad: number | null }) {
+    const { data, error } = await this.sb.supabase.from('usuarios').insert([profile]);
+    return { data, error };
+  }
 
 }

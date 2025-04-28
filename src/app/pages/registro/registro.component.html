@@ -5,24 +5,41 @@
 
     <div class="mb-3 text-start">
       <label>Correo electrónico:</label>
-      <input type="email" class="form-control" [(ngModel)]="email">
+      <input type="email" name="email" class="form-control" [(ngModel)]="email">
       <div *ngIf="emailError" class="text-danger mt-1">{{ emailError }}</div>
     </div>
 
     <div class="mb-3 text-start">
+      <label>Nombre:</label>
+      <input type="text" name="nombre" class="form-control" [(ngModel)]="nombre">
+      <div *ngIf="nombreError" class="text-danger mt-1">{{ nombreError }}</div>
+    </div>
+
+    <div class="mb-3 text-start">
+      <label>Apellido:</label>
+      <input type="text" name="apellido" class="form-control" [(ngModel)]="apellido">
+      <div *ngIf="apellidoError" class="text-danger mt-1">{{ apellidoError }}</div>
+    </div>
+
+    <div class="mb-3 text-start">
+      <label>Edad:</label>
+      <input type="number" name="edad" class="form-control" [(ngModel)]="edad">
+      <div *ngIf="edadError" class="text-danger mt-1">{{ edadError }}</div>
+    </div>
+
+    <div class="mb-3 text-start">
       <label>Contraseña:</label>
-      <input type="password" class="form-control" [(ngModel)]="password">
+      <input type="password" name="password" class="form-control" [(ngModel)]="password">
       <div *ngIf="passwordError" class="text-danger mt-1">{{ passwordError }}</div>
     </div>
 
     <div class="mb-3 text-start">
       <label>Confirmar Contraseña:</label>
-      <input type="password" class="form-control" [(ngModel)]="confirmPassword">
+      <input type="password" name="confirmPassword" class="form-control" [(ngModel)]="confirmPassword">
       <div *ngIf="confirmPasswordError" class="text-danger mt-1">{{ confirmPasswordError }}</div>
     </div>
 
     <button class="btn btn-primary w-100" (click)="registrar()">Registrar</button>
-    
   </div>
 </div>
 
