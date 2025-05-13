@@ -1,0 +1,19 @@
+<div class="chat-container">
+  <div class="chat-titulo">Chat</div>
+
+  <div class="chat-mensajes">
+    <div *ngFor="let mensaje of mensajes" [ngClass]="{ 'mensaje-propio': esMensajePropio(mensaje.email_usuario), 'mensaje-otro': !esMensajePropio(mensaje.email_usuario) }">
+      <div class="mensaje-info">
+        <small><strong>{{ mensaje.email_usuario }}</strong> - {{ mensaje.fecha | date:'shortTime' }}</small>
+      </div>
+      <div class="mensaje-texto">
+        {{ mensaje.mensaje }}
+      </div>
+    </div>
+  </div>
+
+  <div class="chat-input">
+    <input class="form-control" type="text" [(ngModel)]="nuevoMensaje" placeholder="Escribí un mensaje..." (keyup.enter)="enviarMensaje()" />
+    <img src="assets/enviar-icon.png" alt="Enviar" class="enviar-icono" (click)="enviarMensaje()" />
+  </div>
+</div>

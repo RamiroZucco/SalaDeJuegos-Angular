@@ -1,11 +1,41 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule, RouterModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+  constructor(public auth: AuthService, private router: Router) {}
 
+  ngOnInit(): void {
+  }
+
+  irAJuego(ruta: string) {
+    if (!this.auth.isLoggedIn()) {
+      this.mostrarModal();
+      return;
+    }
+    this.router.navigate([ruta]);
+  }
+
+  mostrarModal() {
+    const modal = document.getElementById("modal-login");
+    if (modal) {
+      modal.style.display = "flex";
+    }
+  }
+
+  cerrarModal() {
+    const modal = document.getElementById("modal-login");
+    if (modal) {
+      modal.style.display = "none";
+    }
+  }
 }

@@ -1,0 +1,40 @@
+<div class="mayor-container">
+  <h2 class="mayor-titulo">
+    {{ !gameStarted ? '¿Mayor o Menor?' : '¿La siguiente será Mayor o Menor?' }}
+  </h2>
+
+  <div class="mayor-box">
+    <div class="card-container">
+      <div *ngIf="actualCard" class="card">
+        <img [src]="actualCard.image" alt="Carta" />
+      </div>
+      <p class="score">Puntuación: {{ puntuacion }}</p>
+    </div>
+
+    <div class="img-separador">
+      <img src="../../../assets/juegos/orden-cartas.png" alt="Orden" />
+    </div>
+
+    <div class="mayor-botones">
+      <button *ngIf="!gameStarted" (click)="getCard('start')" class="btn btn-comenzar">Empezar</button>
+      <div *ngIf="gameStarted && stillPlay" class="btn-up-down">
+        <button (click)="getCard('up')" class="btn btn-up">
+          <fa-icon [icon]="faArrowUp"></fa-icon>
+        </button>
+        <button (click)="getCard('down')" class="btn btn-down">
+          <fa-icon [icon]="faArrowDown"></fa-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="gameOver" class="modal-overlay">
+    <div class="modal-box modal-derrota">
+      <h3>¡Perdiste!</h3>
+      <p>La carta era:</p>
+      <img [src]="actualCard.image" class="carta-final" alt="Carta final" />
+      <p class="puntaje-final">Puntuación: <strong>{{ puntuacion }}</strong></p>
+      <button (click)="resetGame()">Jugar de nuevo</button>
+    </div>
+  </div>
+</div>

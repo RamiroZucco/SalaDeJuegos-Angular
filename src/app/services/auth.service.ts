@@ -17,19 +17,16 @@ export class AuthService {
     this.sb.supabase.auth.onAuthStateChange((event, session) => {
       console.log(event, session);
 
-      if(session === null) { // Se cierra sesión o no hay sesión
+      if(session === null) { 
         this.usuarioActual = null;
-        // Redirigir al login
-        this.router.navigateByUrl("/login");
-      } else { // si hay sesión
+      } else { 
         this.usuarioActual = session.user;
-        // Redirigir al home
         this.router.navigateByUrl("/");
       }
     });
   }
 
-  // Crear una cuenta
+
   async crearCuenta(correo: string, contraseña: string){
       return await this.sb.supabase.auth.signUp({
       email: correo,
@@ -49,11 +46,16 @@ export class AuthService {
   // Cerrar sesión
   async cerrarSesion(){
     const { error} = await this.sb.supabase.auth.signOut();
+    this.router.navigateByUrl("/login");
   }
 
   async insertarUsuario(profile: { id_usuario: string; email: string; nombre: string; apellido: string; edad: number | null }) {
     const { data, error } = await this.sb.supabase.from('usuarios').insert([profile]);
     return { data, error };
+  }
+
+  isLoggedIn(): boolean {
+  return this.usuarioActual !== null;
   }
 
 }

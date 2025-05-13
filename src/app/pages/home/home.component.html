@@ -1,10 +1,33 @@
 <div class="page-content text-center">
     <div>
       <img src="assets/icono.png" alt="Icono de la Sala" style="width: 190px; margin-bottom: 1rem;">
-      <h1 class="text-primary mb-3">¡Bienvenido a la Sala de Juegos RZ!</h1>
-      <p class="lead text-light">
+      <h1 class="home-titulo">¡Bienvenido a la Sala de Juegos RZ!</h1>
+      <p class="home-subtitulo">
         Aquí encontrarás juegos simples pero adictivos creados por Ramiro Zucco Valizia.
         ¡Divertite, desafiate y superá récords!
       </p>
     </div>
-  </div>
+    <div class="juego-card" >
+      <div class="juego-card-content">
+        <h2 class="juego-titulo">AHORCADO</h2>
+        <p>Desafiá tu ingenio y vocabulario con Ahorcado. ¡Una clásica diversión que nunca pasa de moda!</p>
+        <button class="btn-jugar" (click)="irAJuego('/ahorcado')">JUGAR</button>
+      </div>
+    </div>
+
+    <div class="juego-card">
+      <div class="juego-card-content">
+        <h2 class="juego-titulo">¿MAYOR O MENOR?</h2>
+        <p>¿Te atrevés a poner a prueba tu intuición? Adiviná si el siguiente número será mayor o menor. ¡Acertá todo lo que puedas!</p>
+        <button class="btn-jugar" (click)="irAJuego('/mayor-o-menor')">JUGAR</button>
+      </div>
+    </div>
+
+    <div id="modal-login" class="modal-overlay">
+      <div class="modal-login-box">
+        <h3 class="modal-titulo">Acceso necesario</h3>
+        <p class="modal-texto">Debes iniciar sesión para jugar.</p>
+        <button class="modal-boton" (click)="cerrarModal()">Cerrar</button>
+      </div>
+    </div>
+</div>

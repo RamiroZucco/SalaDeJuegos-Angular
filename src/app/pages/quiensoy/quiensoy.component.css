@@ -1,8 +1,42 @@
 .page-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.img-perfil {
+  width: 450px;
+  height: auto;
+  align-self: center;
+  border-radius: 12px;
+  box-shadow: 0 0 12px #1a237e;
+  margin-bottom: 35px;
+}
+
+.quien-titulo {
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: bold;
+  color: #3db5ff;
+  text-shadow: 0 0 6px #0e3bce;
+  margin-bottom: 10px;
+}
+
+.quien-subtitulo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #3db5ff;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.quien-texto {
+  font-size: 18px;
+  color: #ccc;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}

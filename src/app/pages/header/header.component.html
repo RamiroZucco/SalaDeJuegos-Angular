@@ -5,6 +5,12 @@
       <img src="assets/icono.png" width="65" height="65" alt="Logo" style="border-radius: 10px;">
       <a class="nav-link text-light" routerLink="/home">Home</a>
       <a class="nav-link text-light" routerLink="/quiensoy">¿Quién es el creador del sitio?</a>
+
+      <ng-container *ngIf="authService.usuarioActual">
+        <a routerLink="/chat">
+          <img src="assets/chat-icon.png" width="30" height="30" alt="Chat" style="margin-top: 3px;">
+        </a>
+      </ng-container>
     </div>
 
     <div *ngIf="!authService.usuarioActual; else loggedIn" class="d-flex align-items-center">

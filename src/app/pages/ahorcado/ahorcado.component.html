@@ -1,0 +1,41 @@
+<div class="ahorcado-container">
+  <h2 class="ahorcado-titulo">Ahorcado</h2>
+
+  <div class="game-box">
+    <div class="game-header">
+      <div class="ahorcado-img-box">
+        <img *ngIf="!lose" src="../../../assets/juegos/persona_ahorcado.png" class="foto-ahorcado" alt="Ahorcado">
+        <img *ngIf="lose" src="../../../assets/juegos/persona_ahorcado_perdio.png" class="foto-ahorcado" alt="Ahorcado perdio">
+      </div>
+
+      <div class="hearts">
+        <fa-icon *ngFor="let _ of getLifesArray()" [icon]="faHeart" class="heart"></fa-icon>
+        <fa-icon *ngFor="let _ of getNotLifesArray()" [icon]="faHeart" class="not-heart"></fa-icon>
+      </div>
+    </div>
+
+    <div class="ahorcado-palabra">
+      <span *ngFor="let letra of wordUser" class="ahorcado-letra">{{ letra }}</span>
+    </div>
+
+    <div *ngIf="gameOver" class="modal-overlay">
+      <div class="modal-box" [ngClass]="lose ? 'modal-derrota' : 'modal-victoria'">
+        <h3>{{ lose ? '¡Perdiste!' : '¡Adivinaste!' }}</h3>
+        <p>La palabra era: <strong>{{wordSelected}}</strong></p>
+        <button (click)="resetGame()">Jugar de nuevo</button>
+      </div>
+    </div>
+
+    <div class="keyboard">
+      <div class="keyboard-row">
+        <button class="letter" *ngFor="let letra of 'QWERTYUIOP'.split('')" (click)="getLetter(letra, $event)" [disabled]="gameOver">{{ letra }}</button>
+      </div>
+      <div class="keyboard-row">
+        <button class="letter" *ngFor="let letra of 'ASDFGHJKLÑ'.split('')" (click)="getLetter(letra, $event)" [disabled]="gameOver">{{ letra }}</button>
+      </div>
+      <div class="keyboard-row">
+        <button class="letter" *ngFor="let letra of 'ZXCVBNM'.split('')" (click)="getLetter(letra, $event)" [disabled]="gameOver">{{ letra }}</button>
+      </div>
+    </div>
+  </div>
+</div>
