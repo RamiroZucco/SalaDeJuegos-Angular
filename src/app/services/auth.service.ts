@@ -13,7 +13,6 @@ export class AuthService {
   usuarioActual: User | null = null;
 
   constructor() { 
-    // Saber si el usuario está logueado o no.
     this.sb.supabase.auth.onAuthStateChange((event, session) => {
       console.log(event, session);
 
@@ -34,7 +33,6 @@ export class AuthService {
     });
   }
   
-  // Iniciar sesión
   async iniciarSesion(correo: string, contraseña: string) {
     return await this.sb.supabase.auth.signInWithPassword({
       email: correo,
@@ -42,8 +40,6 @@ export class AuthService {
     });
   }
   
-
-  // Cerrar sesión
   async cerrarSesion(){
     const { error} = await this.sb.supabase.auth.signOut();
     this.router.navigateByUrl("/login");

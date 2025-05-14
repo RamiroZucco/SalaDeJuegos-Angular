@@ -1,0 +1,24 @@
+<div class="color-detector-container">
+  <h2 class="titulo">Color Detector</h2>
+  <p class="tiempo">Tiempo restante: {{ tiempoRestante }}s</p> 
+  <p class="puntaje">Puntaje: {{ score }}</p>
+  <div
+    class="grilla"
+    [style.gridTemplateColumns]="'repeat(' + gridSize + ', 1fr)'"
+  >
+    <div
+      *ngFor="let cuadro of cuadros"
+      class="cuadro"
+      [style.backgroundColor]="cuadro.color"
+      (click)="seleccionar(cuadro.esDiferente)"
+    ></div>
+  </div>
+
+  <div *ngIf="showModal" class="modal-overlay">
+    <div class="modal-box">
+      <h3>{{ modalTitulo }}</h3>
+      <p>{{ modalMensaje }}</p>
+      <button (click)="cerrarModal()">Volver al inicio</button>
+    </div>
+  </div>
+</div>

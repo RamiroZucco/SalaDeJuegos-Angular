@@ -20,7 +20,7 @@ export class AhorcadoComponent {
   "RELOJ", "CAMINAR", "PASTO", "ESCALERA", "CASCO", "CAJA", "SILLA", "MESA",
   "BOTELLA", "VASO", "VENTILADOR", "CARGADOR", "PUERTA", "CAMA", "VASO",
   "PLATO", "TOALLA", "VALIJA", "PERRO", "MERCADO", "PULSERA", "GORRO",
-  "COMPUTADOR", "COCINA", "ARMARIO", "PLANCHA", "JUGUETE"
+  "COMPUTADORA", "COCINA", "ARMARIO", "PLANCHA", "JUGUETE"
   ];
   wordSelected: string = '';
   wordUser: string[] = [];
@@ -67,7 +67,7 @@ export class AhorcadoComponent {
     const tiempoTotalSegundos = Math.floor((this.tiempoFinal - this.tiempoInicio) / 1000);
 
     const datos = {
-      id_usuario: this.authService.usuarioActual?.id || '',
+      usuario: this.authService.usuarioActual?.email || '',
       tiempo: tiempoTotalSegundos,
       letras_seleccionadas: this.letrasSeleccionadas.length,
       resultado: gano ? 'Victoria' : 'Derrota',

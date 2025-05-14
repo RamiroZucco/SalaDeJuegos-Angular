@@ -90,7 +90,7 @@
 }
 
 .modal-overlay {
-  display: none; /* controlado por JS */
+  display: none; 
   position: fixed;
   z-index: 999;
   left: 0;
@@ -151,4 +151,22 @@
 @keyframes scaleIn {
   0% { transform: scale(0.9); opacity: 0; }
   100% { transform: scale(1); opacity: 1; }
+}
+
+.btn-ranking {
+  margin-top: 3rem;
+  padding: 10px 24px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 30px;
+  background: linear-gradient(to right, #3db5ff, #1e4ed8);
+  color: #000;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-ranking:hover {
+  background: #ffffff;
+  color: #1e4ed8;
+  box-shadow: 0 0 8px #3db5ff;
 }

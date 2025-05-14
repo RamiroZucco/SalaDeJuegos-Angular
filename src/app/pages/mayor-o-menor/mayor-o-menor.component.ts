@@ -88,7 +88,7 @@ export class MayorOMenorComponent implements OnInit {
 
   async saveResult() {
     const datos = {
-      id_usuario: this.auth.usuarioActual?.id || '',
+      usuario: this.auth.usuarioActual?.email || '',
       aciertos: this.puntuacion,
       fecha: new Date()
     };

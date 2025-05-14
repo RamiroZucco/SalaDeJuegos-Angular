@@ -1,0 +1,41 @@
+<div class="preguntados-container">
+
+  <ng-container *ngIf="!juegoIniciado">
+    <div class="preguntados-box inicio-box">
+        <h2 class="preguntados-titulo">¿Estás listo para jugar Preguntados?</h2>
+        <img src="assets/juegos/preguntados.png" class="preguntados-img-inicio" alt="Imagen Preguntados">
+        <button class="btn-comenzar mt-3" (click)="comenzarJuego()">Empezar</button>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="juegoIniciado">
+    <h2 class="preguntados-titulo">Preguntados</h2>
+
+    <div class="preguntados-box">
+      <p class="preguntados-info">Puntaje: {{ puntaje }}</p>
+      <p class="preguntados-info">Intentos restantes: {{ intentos }}</p>
+
+      <div class="pregunta-texto">
+        {{ preguntaActual }}
+      </div>
+
+      <img [src]="img_actual" class="img-pregunta" alt="Imagen relacionada">
+
+      <div class="opciones">
+        <button class="opcion" (click)="IntentoPregunta('A')">{{ opcA }}</button>
+        <button class="opcion" (click)="IntentoPregunta('B')">{{ opcB }}</button>
+        <button class="opcion" (click)="IntentoPregunta('C')">{{ opcC }}</button>
+        <button class="opcion" (click)="IntentoPregunta('D')">{{ opcD }}</button>
+      </div>
+    </div>
+  </ng-container>
+
+  <div *ngIf="showModal" class="modal-overlay">
+    <div class="modal-box">
+      <h3>{{ modalTitulo }}</h3>
+      <p>{{ modalMensaje }}</p>
+      <button (click)="cerrarModal()">Continuar</button>
+    </div>
+  </div>
+
+</div>

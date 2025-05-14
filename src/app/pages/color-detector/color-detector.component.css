@@ -1,0 +1,96 @@
+:host {
+  display: block;
+  background-color: #030f2e;
+  min-height: 100vh;
+  padding: 30px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+}
+
+.color-detector-container {
+  text-align: center;
+}
+
+.titulo {
+    margin-top: 40px;
+  font-size: clamp(28px, 4vw, 42px);
+  color: #3db5ff;
+  text-shadow: 0 0 8px #0e3bce;
+  margin-bottom: 10px;
+}
+
+.puntaje {
+  margin-top: 20px;
+  color: #3db5ff;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.grilla {
+  display: grid;
+  grid-auto-rows: 65px;
+  gap: 10px;
+  justify-content: center;
+  margin: 20px auto;
+  width: fit-content;
+}
+
+
+
+.cuadro {
+    margin-top: 35px;
+  width: 65px;
+  height: 65px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.cuadro:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 5px #3db5ff;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(3, 15, 46, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-box {
+  background-color: #0e0e41;
+  border: 2px solid #3db5ff;
+  padding: 30px;
+  border-radius: 16px;
+  text-align: center;
+  color: white;
+  max-width: 400px;
+  box-shadow: 0 0 20px #1a237e;
+}
+
+.modal-box h3 {
+  color: #3db5ff;
+  margin-bottom: 10px;
+}
+
+.modal-box button {
+  margin-top: 20px;
+  background-color: #3db5ff;
+  color: #000;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.tiempo {
+    margin-top: 40px;
+  color: #3db5ff;
+  font-weight: bold;
+  font-size: 20px;
+}

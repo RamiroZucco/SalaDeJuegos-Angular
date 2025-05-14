@@ -23,6 +23,26 @@
       </div>
     </div>
 
+    <div class="juego-card">
+      <div class="juego-card-content">
+        <h2 class="juego-titulo">PREGUNTADOS</h2>
+        <p>Poné a prueba tus conocimientos en una amplia variedad de temas con Preguntados. Respondé preguntas de historia, ciencia, geografía, entretenimiento y mucho más. ¡Demostrá que sos el más sabio!</p>
+        <button class="btn-jugar" (click)="irAJuego('/preguntados')">JUGAR</button>
+      </div>
+    </div>
+
+    <div class="juego-card">
+      <div class="juego-card-content">
+        <h2 class="juego-titulo">JUEGO PROPIO: Color Detector</h2>
+        <p>Desafiá tu vista con Color Detector. Identificá la mayor cantidad de colores distintos entre grillas antes de que se acabe el tiempo. ¡Un juego adictivo que pone a trabajar tu vista como nunca!</p>
+        <button class="btn-jugar" (click)="irAJuego('/color-detector')">JUGAR</button>
+      </div>
+    </div>
+
+    
+    <button class="btn-ranking" routerLink="/resultados">VER RANKING</button>
+      
+
     <div id="modal-login" class="modal-overlay">
       <div class="modal-login-box">
         <h3 class="modal-titulo">Acceso necesario</h3>
